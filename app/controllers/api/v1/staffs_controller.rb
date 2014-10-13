@@ -13,6 +13,7 @@ class Api::V1::StaffsController < ApplicationController
   # GET /staffs/1
   # GET /staffs/1.json
   def show
+    render :json => { :staff => @staff}
   end
 
   # GET /staffs/new
@@ -78,6 +79,6 @@ class Api::V1::StaffsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def staff_params
-      params.require(:user).permit(:first_name, :last_name, :date_of_birth, :pan_no, :permanent_address, :temporary_address, :phone1, :phone2, :emergency_contact_no,:email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :date_of_birth, :pan_no, :permanent_address, :temporary_address, :phone1, :phone2, :emergency_contact_no,:email, :password, :password_confirmation, :blood_group, :middle_name)
     end
 end
